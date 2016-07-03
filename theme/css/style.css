@@ -35,7 +35,9 @@
 
 /* Logo
 ====================================*/
-#logo { margin-top: 32px; }
+#logo {
+	padding: 15px 15px 15px 15px;
+}
 
 #logo a img {
 	float: left;
@@ -260,7 +262,7 @@
 		right: 0;
 		position: absolute;
 		margin: 0 auto;
-		margin-top: 28px;
+		margin-top: 0;
 		z-index: 99;
 	}
 
