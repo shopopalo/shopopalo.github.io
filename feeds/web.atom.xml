@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>phonxis</title><link href="http://shopopalo.github.io/" rel="alternate"></link><link href="http://shopopalo.github.io/feeds/web.atom.xml" rel="self"></link><id>http://shopopalo.github.io/</id><updated>2016-07-02T22:57:00+03:00</updated><entry><title>second post</title><link href="http://shopopalo.github.io/2016/07/02/second-article/" rel="alternate"></link><published>2016-07-02T22:57:00+03:00</published><author><name>phonxis</name></author><id>tag:shopopalo.github.io,2016-07-02:2016/07/02/second-article/</id><summary type="html">&lt;p&gt;some article text some article text some article text
+some article text
+some article text
+some article text
+some article text
+some article text some article text some article text&lt;/p&gt;
+&lt;p&gt;some article text some article text some article text
+some article text
+some article text
+some article text
+some article text
+some article text some article text some article text&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;fib&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;yield&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
+        &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="pelican"></category></entry><entry><title>first post</title><link href="http://shopopalo.github.io/2016/07/02/first-article/" rel="alternate"></link><published>2016-07-02T22:56:00+03:00</published><author><name>phonxis</name></author><id>tag:shopopalo.github.io,2016-07-02:2016/07/02/first-article/</id><summary type="html">&lt;p&gt;some article text&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry></feed>
