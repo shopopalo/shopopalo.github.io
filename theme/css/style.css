@@ -2047,7 +2047,7 @@ html[xmlns] .slides {display: block;}
 }
 
 .hoverlink {
-	background: url(../images/hoverlink.png) no-repeat;
+	/*background: url(../images/hoverlink.png) no-repeat;*/
 	display: block;
 	height: 19px;
 	width: 19px;
