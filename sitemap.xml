@@ -5,20 +5,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2016-07-03T18:44:02-00:00</lastmod>
+<lastmod>2016-07-03T20:10:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2016-07-03T18:44:02-00:00</lastmod>
+<lastmod>2016-07-03T20:10:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/2016/07/03/publish-pelican-blog-to-github-pages/</loc>
+<lastmod>2016-07-03T18:35:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/publish-pelican-blog-to-github-pages2-ua.html</loc>
 <lastmod>2016-07-03T18:35:00+03:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -49,13 +56,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <loc>/tag/pelican</loc>
 <lastmod>2016-07-03T18:35:00+02:02</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/publish-pelican-blog-to-github-pages-ua.html</loc>
-<lastmod>2016-07-03T18:35:00+03:00</lastmod>
-<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
