@@ -5,14 +5,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2016-07-04T21:45:08-00:00</lastmod>
+<lastmod>2016-07-04T21:48:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2016-07-04T21:45:08-00:00</lastmod>
+<lastmod>2016-07-04T21:48:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -32,7 +32,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/pelican</loc>
+<loc>/tag/github</loc>
 <lastmod>2016-07-03T18:35:00+02:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -46,7 +46,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/github</loc>
+<loc>/tag/pelican</loc>
 <lastmod>2016-07-03T18:35:00+02:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
