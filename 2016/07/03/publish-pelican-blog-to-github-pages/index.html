@@ -117,7 +117,155 @@
 		<p><a href="http://blog.getpelican.com">Pelican</a> это генератор статических сайтов, которому не нужна ни база данных, ни серверная бизнес логика. Для написания контента для сайта, может использоватся <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>, <a href="http://daringfireball.net/projects/markdown/">Markdown</a> или <a href="http://www.methods.co.nz/asciidoc/">AsciiDoc</a> форматы, которые очень легки в использовании. </p>
 <p><a href="https://github.com/">Github</a> является наиболее популярным сервисом для хранения открытого исходного кода. <a href="https://pages.github.com/">Github pages</a> дает возможность пользователям хранить страницы с контентом в репозитарии вместе с исходным кодом.</p>
 <h3>Настройка страницы github.io</h3>
-<p>Чтобы создать страницу пользователя на github, нужно <a href="https://github.com/new">создать два новых репозитария</a>, <em>username.github.io-src</em> и <em>username.github.io</em> как описано на <a href="https://pages.github.com">Github pages</a>.(Используйте имя пользователя Github вместо username) Репозитарий <em>username.github.io-src</em> будет хранить исходный код вашего сайта/блога, а <em>username.github.io</em> будет содержать только HTML файлы сайта, которые будет генерировать Pelican. </p>
+<p>Чтобы создать страницу пользователя на github, нужно <a href="https://github.com/new">создать два новых репозитария</a>, <em>username.github.io-src</em> и <em>username.github.io</em> как описано на <a href="https://pages.github.com">Github pages</a>.(Используйте имя пользователя Github вместо username) Репозитарий <em>username.github.io-src</em> будет хранить исходный код вашего сайта/блога, а <em>username.github.io</em> будет содержать только HTML файлы сайта, которые будет генерировать Pelican.</p>
+<h3>Установка Pelican</h3>
+<p>На Fedora нужно выполнить всего лишь одну комманду:</p>
+<div class="highlight"><pre><span></span>sudo dnf install python-pelican
+</pre></div>
+
+
+<p>На Ubuntu:</p>
+<div class="highlight"><pre><span></span>sudo apt-get install python-pelican
+</pre></div>
+
+
+<p>Или с помощью pip:</p>
+<div class="highlight"><pre><span></span>pip install pelican
+</pre></div>
+
+
+<p>Также нам может понадобится Markdown, если вы выберете его вместо reStructuredText или AsciiDoc:</p>
+<div class="highlight"><pre><span></span>pip install Markdown
+</pre></div>
+
+
+<p>Склонировать репозитарий также не составит особого труда:</p>
+<div class="highlight"><pre><span></span>git clone git@github.com:username/username.github.io-src ghpages
+</pre></div>
+
+
+<p>где <em>username</em> имя пользователя github, а <em>ghpages</em> - имя локальной папки куда будет склонирован репозитарий.</p>
+<p>Если вы до сих пор ниразу не пытались клонировать репозитарий командой указаной выше, у вас скорее всего ничего не получится, потому что сервере не зарегистрирован ваш публичный ssh ключ, который находится в директории</p>
+<div class="highlight"><pre><span></span>(windows) C:\Users\USER\.ssh\id_rsa.pub
+(linux) /home/USER/.ssh/id_rsa.pub
+</pre></div>
+
+
+<p>Проблема с клонированием исчезнет, когда вы укажете серверу ваш ключ. Подробно о том как это сделать можно посмотреть <a href="https://help.github.com/articles/generating-an-ssh-key/">тут</a>. Но если вкратце, то нужно выполнить эти команды:</p>
+<div class="highlight"><pre><span></span># проверка есть ли у вас публичный ключ
+# при наличии ключей будет выведен их список
+ls -al ~/.ssh
+
+# если ключей нет, то их можно создать коммандой
+# где email указывается как метка этого ключа
+ssh-keygen -t rsa -b 4096 -C &quot;ваш_emain@example.com&quot;
+
+# далее появится это сообщение, где просто нужно нажать Enter
+Enter a file in which to save the key (/home/you/.ssh/id_rsa):
+
+# далее нужно ввести passphrase(пароль) и подтвердить его
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+
+# добавим пароль в ssh-agent
+eval &quot;$(ssh-agent -s)&quot;
+ssh-add ~/.ssh/id_rsa
+
+# далее этот ключ нужно добавить в ваш github аккаунт
+# для возможности скопировать ключ в буфер обмена,
+# нужно установить xclip
+(Ubuntu) sudo apt-get install xclip
+(Fedora) sudo yum install xclip
+
+# скопировать в буфер можно командой:
+xclip -sel clip &lt; ~/.ssh/id_rsa.pub
+</pre></div>
+
+
+<p>далее, заходим в настройки github аккаунта, жмякаем на кнопку "New SSH key", заполняем поля с названием для ключа (например "ssh ключ на ubuntu") и самим ключом (вставляем из буфера Ctrl+C). Ну и конечно же сохраняем это.</p>
+<p><img src="../../../../images/ssh_and_cpg_keys.png" class="post-image"></p>
+<p><img src="../../../../images/add_ssh_key.png" class="post-image"></p>
+<p>Всё, теперь с клонированием репозитария проблем быть не должно. Просто заходим в новосозданную директорию:</p>
+<div class="highlight"><pre><span></span>cd ghpages
+</pre></div>
+
+
+<h3>Установка блога с помощью Pelican</h3>
+<p>Проверьте репозитарий с которым вы работаете:</p>
+<div class="highlight"><pre><span></span>git remote -v
+</pre></div>
+
+
+<p>Вы должны увидеть <em>username.github.io-src</em> репозитарий. Если это так, то тпереь вы должны клонировать <em>output</em> репозитарий как подмодуль:</p>
+<div class="highlight"><pre><span></span>git submodule add git@github.com:username/username.github.io.git output
+</pre></div>
+
+
+<p>Для старта pelican проекта, нужно использовать комманду:</p>
+<div class="highlight"><pre><span></span>pelican-quickstart
+</pre></div>
+
+
+<p>Эта комманда задаст вам вопросы, на которые вы должны будете ответить. Вот мои ответы на некоторые из этих вопросов:</p>
+<ul>
+<li>
+<p>--  Where do you want to create your new web site? Помните ми выполняли команду cd ghpages? тогда нам нужно будет написать в ответ точку - <strong>.</strong>, если вы не выполнили ее, тогда указываем эту папку - <strong>ghpages</strong></p>
+</li>
+<li>
+<p>--  Do you want to specify a URL prefix? e.g., http://example.com <strong>y</strong>.</p>
+</li>
+<li>
+<p>--  What is your URL prefix? <strong>http://USERNAME.github.io</strong></p>
+</li>
+<li>
+<p>--  Do you want to generate a Fabfile/Makefile to automate generation and publishing? <strong>y</strong></p>
+</li>
+<li>
+<p>--  Auto-reload &amp; simpleHTTP script: <strong>y</strong></p>
+</li>
+<li>
+<p>--  Upload to dropbox, S3 и других хостингов отвечаем <strong>n</strong>, только для Github Pages отвечаем <strong>y</strong></p>
+</li>
+<li>
+<p>--  Is this your personal page (username.github.io)? <strong>y</strong></p>
+</li>
+</ul>
+<p>После ответа на все вопросы, будет оповищение об ошибке. Так и должно быть, так как директория <em>output</em> у нас была создана ранее.</p>
+<p>Теперь откройте <em>publishconf.py</em> и укажите переменной <em>DELETE_OUTPUT_DIRECTORY</em> значение <em>False</em>. Если мы этого не сделаем, то каждый раз при публикации, Pelican будет удалять наш подмодуль(директория output).</p>
+<h3>Улучшалки</h3>
+<p>Существуют различные хитрости и советы (<a href="https://github.com/getpelican/pelican/wiki/Tips-n-Tricks">tips-n-tricks</a>), которые во многих случаях могут быть полезны. Например одна из удобных фич - добавление нового поста к блогу с помощью команды newpost Makefile-а.</p>
+<h3>Первый пост</h3>
+<p><a href="http://docs.getpelican.com/en/3.6.3/content.html">Создайте свой первый пост</a> с помощью Markdown или reStructured Text в директорию <em>content</em>.</p>
+<h3>Постройте, закоммитьте, запуште!</h3>
+<p>Сначала постройте ваш блог и протестируйте результат:</p>
+<div class="highlight"><pre><span></span>make html
+make server
+</pre></div>
+
+
+<p>После этих комманд будет создан блог и запущен локальный сервер(порт 8000). Можете зайти через браузер на <em>localhost:8000</em> и проверить работоспособность. Если все нормально, то следующей коммандой нужно сгенерировать вебсайт:</p>
+<div class="highlight"><pre><span></span>make publish
+</pre></div>
+
+
+<p>После этого просто добавте содержимое директории в индекс, закоммитьте их и запуште в репозитарий. из-за того что был использован подмодуль, сначала вы должны сделать это для директории <em>output</em>.</p>
+<div class="highlight"><pre><span></span># пуш файлов в username.github.io репозитарий
+cd output
+git add .
+git commit -m &quot;First post&quot;
+git push -u origin master
+
+# пуш файлов в username.github.io-src репозитарий
+cd ..
+echo &#39;*.pyc&#39; &gt;&gt; .gitignore
+git add .
+git commit -m &quot;First commit&quot;
+git push -u origin master
+</pre></div>
+
+
+<p>Документация Pelican-а версии 3.6.0 ссылается на инструмент с названием ghp-pages, но он не работает на Fedora 22 как описано в документации. Использование подмодуля решает эту проблему.</p>
+<p><a href="https://fedoramagazine.org/make-github-pages-blog-with-pelican/">Оригинал статьи</a></p>
 
 		    <div class="tags">
 		        <p>tags: <a href="/tag/python">python</a><a href="/tag/pelican">pelican</a><a href="/tag/github">github</a></p>
