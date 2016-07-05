@@ -2072,7 +2072,7 @@ html[xmlns] .slides {display: block;}
 /* Post Content */
 .post-content,
 .post-format {
-	float: left;
+	/*float: left;*/
 }
 
 .post-format .icon-camera {
@@ -2094,6 +2094,7 @@ html[xmlns] .slides {display: block;}
 	display: block;
 	width: 100%;
 }
+
 /**/
 
 .post-content { margin: -57px 0 0 89px }
