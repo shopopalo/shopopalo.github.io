@@ -4,49 +4,49 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>/</loc>
-<lastmod>2016-07-05T17:00:57-00:00</lastmod>
+<loc>http://shopopalo.github.io/</loc>
+<lastmod>2016-07-05T17:13:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/archives.html</loc>
-<lastmod>2016-07-05T17:00:57-00:00</lastmod>
+<loc>http://shopopalo.github.io/archives.html</loc>
+<lastmod>2016-07-05T17:13:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/2016/07/03/publish-pelican-blog-to-github-pages/</loc>
+<loc>http://shopopalo.github.io/2016/07/03/publish-pelican-blog-to-github-pages/</loc>
 <lastmod>2016-07-03T18:35:00+03:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/web</loc>
+<loc>http://shopopalo.github.io/category/web</loc>
 <lastmod>2016-07-03T18:35:00+02:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/github</loc>
+<loc>http://shopopalo.github.io/tag/github</loc>
 <lastmod>2016-07-03T18:35:00+02:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/pelican</loc>
+<loc>http://shopopalo.github.io/tag/python</loc>
 <lastmod>2016-07-03T18:35:00+02:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/python</loc>
+<loc>http://shopopalo.github.io/tag/pelican</loc>
 <lastmod>2016-07-03T18:35:00+02:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
