@@ -275,6 +275,20 @@ git push -u origin master
 </div>
 <hr>
 		
+		    <div class="comments">
+		        <div id="disqus_thread"></div>
+		        <script type="text/javascript">
+		            var disqus_shortname = 'phonxis';
+		            var disqus_identifier = '2016/07/03/publish-pelican-blog-to-github-pages/';
+		            var disqus_url = '/2016/07/03/publish-pelican-blog-to-github-pages/';
+		            (function() {
+		                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		                dsq.src = '//phonxis.disqus.com/embed.js';
+		                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		            })();
+		        </script>
+		        <noscript>Please enable JavaScript to view the comments.</noscript>
+		    </div>
 	</section>
 	<div class="clearfix"></div>
 
@@ -341,5 +355,14 @@ git push -u origin master
 		
 	<!-- Javascripts -->
 	<script src="/theme/js/jquery.min.js"></script>
+<script type="text/javascript">
+    var disqus_shortname = 'phonxis';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 	</body>
 </html>
