@@ -120,39 +120,39 @@
 <p>Чтобы создать страницу пользователя на github, нужно <a href="https://github.com/new">создать два новых репозитария</a>, <em>username.github.io-src</em> и <em>username.github.io</em> как описано на <a href="https://pages.github.com">Github pages</a>.(Используйте имя пользователя Github вместо username) Репозитарий <em>username.github.io-src</em> будет хранить исходный код вашего сайта/блога, а <em>username.github.io</em> будет содержать только HTML файлы сайта, которые будет генерировать Pelican.</p>
 <h3>Установка Pelican</h3>
 <p>На Fedora нужно выполнить всего лишь одну комманду:</p>
-<div class="highlight"><pre><span></span>sudo dnf install python-pelican
+<div class="highlight"><pre>sudo dnf install python-pelican
 </pre></div>
 
 
 <p>На Ubuntu:</p>
-<div class="highlight"><pre><span></span>sudo apt-get install python-pelican
+<div class="highlight"><pre>sudo apt-get install python-pelican
 </pre></div>
 
 
 <p>Или с помощью pip:</p>
-<div class="highlight"><pre><span></span>pip install pelican
+<div class="highlight"><pre>pip install pelican
 </pre></div>
 
 
 <p>Также нам может понадобится Markdown, если вы выберете его вместо reStructuredText или AsciiDoc:</p>
-<div class="highlight"><pre><span></span>pip install Markdown
+<div class="highlight"><pre>pip install Markdown
 </pre></div>
 
 
 <p>Склонировать репозитарий также не составит особого труда:</p>
-<div class="highlight"><pre><span></span>git clone git@github.com:username/username.github.io-src ghpages
+<div class="highlight"><pre>git clone git@github.com:username/username.github.io-src ghpages
 </pre></div>
 
 
 <p>где <em>username</em> имя пользователя github, а <em>ghpages</em> - имя локальной папки куда будет склонирован репозитарий.</p>
 <p>Если вы до сих пор ниразу не пытались клонировать репозитарий командой указаной выше, у вас скорее всего ничего не получится, потому что сервере не зарегистрирован ваш публичный ssh ключ, который находится в директории</p>
-<div class="highlight"><pre><span></span>(windows) C:\Users\USER\.ssh\id_rsa.pub
+<div class="highlight"><pre>(windows) C:\Users\USER\.ssh\id_rsa.pub
 (linux) /home/USER/.ssh/id_rsa.pub
 </pre></div>
 
 
 <p>Проблема с клонированием исчезнет, когда вы укажете серверу ваш ключ. Подробно о том как это сделать можно посмотреть <a href="https://help.github.com/articles/generating-an-ssh-key/">тут</a>. Но если вкратце, то нужно выполнить эти команды:</p>
-<div class="highlight"><pre><span></span># проверка есть ли у вас публичный ключ
+<div class="highlight"><pre># проверка есть ли у вас публичный ключ
 # при наличии ключей будет выведен их список
 ls -al ~/.ssh
 
@@ -186,23 +186,23 @@ xclip -sel clip &lt; ~/.ssh/id_rsa.pub
 <p><img src="../../../../images/ssh_and_cpg_keys.png" class="post-image"></p>
 <p><img src="../../../../images/add_ssh_key.png" class="post-image"></p>
 <p>Всё, теперь с клонированием репозитария проблем быть не должно. Просто заходим в новосозданную директорию:</p>
-<div class="highlight"><pre><span></span>cd ghpages
+<div class="highlight"><pre>cd ghpages
 </pre></div>
 
 
 <h3>Установка блога с помощью Pelican</h3>
 <p>Проверьте репозитарий с которым вы работаете:</p>
-<div class="highlight"><pre><span></span>git remote -v
+<div class="highlight"><pre>git remote -v
 </pre></div>
 
 
 <p>Вы должны увидеть <em>username.github.io-src</em> репозитарий. Если это так, то тпереь вы должны клонировать <em>output</em> репозитарий как подмодуль:</p>
-<div class="highlight"><pre><span></span>git submodule add git@github.com:username/username.github.io.git output
+<div class="highlight"><pre>git submodule add git@github.com:username/username.github.io.git output
 </pre></div>
 
 
 <p>Для старта pelican проекта, нужно использовать комманду:</p>
-<div class="highlight"><pre><span></span>pelican-quickstart
+<div class="highlight"><pre>pelican-quickstart
 </pre></div>
 
 
@@ -238,18 +238,18 @@ xclip -sel clip &lt; ~/.ssh/id_rsa.pub
 <p><a href="http://docs.getpelican.com/en/3.6.3/content.html">Создайте свой первый пост</a> с помощью Markdown или reStructured Text в директорию <em>content</em>.</p>
 <h3>Постройте, закоммитьте, запуште!</h3>
 <p>Сначала постройте ваш блог и протестируйте результат:</p>
-<div class="highlight"><pre><span></span>make html
+<div class="highlight"><pre>make html
 make server
 </pre></div>
 
 
 <p>После этих комманд будет создан блог и запущен локальный сервер(порт 8000). Можете зайти через браузер на <em>localhost:8000</em> и проверить работоспособность. Если все нормально, то следующей коммандой нужно сгенерировать вебсайт:</p>
-<div class="highlight"><pre><span></span>make publish
+<div class="highlight"><pre>make publish
 </pre></div>
 
 
 <p>После этого просто добавте содержимое директории в индекс, закоммитьте их и запуште в репозитарий. из-за того что был использован подмодуль, сначала вы должны сделать это для директории <em>output</em>.</p>
-<div class="highlight"><pre><span></span># пуш файлов в username.github.io репозитарий
+<div class="highlight"><pre># пуш файлов в username.github.io репозитарий
 cd output
 git add .
 git commit -m &quot;First post&quot;
