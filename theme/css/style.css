@@ -2087,7 +2087,7 @@ html[xmlns] .slides {display: block;}
 		display: none;
 	}
 	.post-content { margin: 0 !important;}
-	.post-image { width: 450px !important;}
+	/*.post-image { width: 450px !important;}*/
 }
 
 .post-image {
